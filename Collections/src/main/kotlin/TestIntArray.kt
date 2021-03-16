@@ -1,5 +1,6 @@
 package com.example.collectionsarrayslists
 
+import java.lang.Math.random
 fun main(){
     val values = IntArray(5)
 
@@ -9,6 +10,23 @@ fun main(){
     values[3] = 3
     values[4] = 2
 
+    println("-------------------------------")
+    for (valor in values){
+        println(valor)
+    }
+
+    println("-------------------------------")
+    values.forEach {
+        println(it)
+    }
+
+    println("-------------------------------")
+    for (index in values.indices){
+        println(values[index])
+    }
+
+    println("-------------------------------")
+    values.sort()
     for (valor in values){
         println(valor)
     }
