@@ -1,0 +1,14 @@
+<resources>
+    <!-- APP NAME -->
+    <string name="app_name">CalculadoraNotas</string>
+
+    <!-- TELA INICIAL -->
+    <!-- Edit Text e Text View -->
+    <string name="Nota1"> Nota 1 </string>
+    <string name="Nota2"> Nota 2 </string>
+    <string name="Faltas"> Faltas </string>
+
+    <!-- Button -->
+    <string name="Calcular"> Calcular </string>
+
+</resources>
