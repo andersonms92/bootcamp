@@ -1,30 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="48sp"
-        android:textColor="@color/purple_500"
-        android:textStyle="bold"
-        android:textAllCaps="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        style="@style/purple_title" />
 
-    <RadioButton
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/pesoEDT"
         android:layout_width="wrap_content"
-        android:text="ALO"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:hint="Insira seu peso em KG"
+        style="@style/input_style" />
+    <EditText
+        android:id="@+id/alturaEDT"
+        style="@style/input_style"
+        android:hint="Insira a sua altura em CM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IMC"
+            style="@style/purple_title"/>
+        <Button
+            android:id="@+id/calcularBTN"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:text="Calcular"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="24dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

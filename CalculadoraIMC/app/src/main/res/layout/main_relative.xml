@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <EditText
+        android:id="@+id/pesoEDT"
+        style="@style/input_style"
+        android:layout_below="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Insira seu peso em KG" />
+
+    <EditText
+        tools:visibility="visible"
+        android:id="@+id/alturaEDT"
+        style="@style/input_style"
+        android:layout_marginHorizontal="24dp"
+        android:layout_alignEnd="@+id/pesoEDT"
+        android:layout_alignStart="@+id/pesoEDT"
+        android:layout_below="@+id/pesoEDT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Insira a sua altura em CM"
+        android:layout_alignRight="@+id/pesoEDT"
+        android:layout_alignLeft="@+id/pesoEDT" />
+
+    <TextView
+        android:id="@+id/textView"
+        tools:visibility="visible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        style="@style/purple_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
+    <Button
+        android:id="@+id/calcularBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="16dp"
+        android:text="Calcular"
+        android:textSize="16sp"
+        tools:visibility="visible"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
