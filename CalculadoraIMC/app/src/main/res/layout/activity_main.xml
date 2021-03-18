@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,3 +58,33 @@
 
 
 </LinearLayout>
+=======
+        android:id="@+id/textView"
+        android:text="Hello World!"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/title_purple" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:text="ALO"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radioButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/title_purple"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 7deec7ac7735e3cc0148a6fe3ac1e90248fb707d

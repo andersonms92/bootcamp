@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+<<<<<<< HEAD
     <style name="purple_title">
+=======
+    <style name="title_purple">
+>>>>>>> 7deec7ac7735e3cc0148a6fe3ac1e90248fb707d
         <item name="android:textSize">48sp</item>
         <item name="android:textColor">@color/purple_500</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
     </style>
+<<<<<<< HEAD
 
     <style name="input_style">
         <item name="android:layout_marginTop">36dp</item>
@@ -15,4 +20,6 @@
         <item name="android:textColor">@android:color/holo_green_dark</item>
         <item name="android:textStyle">bold</item>
     </style>
+=======
+>>>>>>> 7deec7ac7735e3cc0148a6fe3ac1e90248fb707d
 </resources>
