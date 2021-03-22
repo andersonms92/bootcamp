@@ -18,7 +18,7 @@
             app:layout_constraintTop_toTopOf="@id/tv_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/tv_phone"
-            android:contentDescription="Foto do contato"
+            android:contentDescription="@string/iv_photograph_content_description"
             android:layout_width="40dp"
             android:layout_height="40dp"
             tools:src="@tools:sample/avatars" />
@@ -37,6 +37,7 @@
 
         <TextView
             android:id="@+id/tv_phone"
+            style="@style/TextViewDefault"
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
             app:layout_constraintStart_toEndOf="@id/iv_photograph"
             android:textSize="14sp"
