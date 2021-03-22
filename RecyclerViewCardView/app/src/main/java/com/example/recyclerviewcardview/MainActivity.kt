@@ -1,35 +1,65 @@
 package com.example.recyclerviewcardview
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.edit
+import com.example.recyclerviewcardview.DetailActivity.Companion.EXTRA_CONTACT
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ClickItemContactListener{
    private val rvList: RecyclerView by lazy {
        findViewById(R.id.rv_list)
    }
-    private val adapter = ContactAdapter()
+    private val adapter = ContactAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.drawer_menu)
 
         initDrawer()
+        fetchListContact()
         bindViews()
-        updateList()
     }
 
-    private fun initDrawer(){
+    private fun fetchListContact() {
+       val list = arrayListOf(
+            Contact(
+                "Anderson Matos",
+                "(51) 99778-0521",
+                "img.png"
+            ),
+            Contact(
+                "Robson de Matos",
+                "(51) 99143-6335",
+                "img.png"
+            )
+        )
+        getInstanceSharedPreferences().edit {
+            val json = Gson().toJson(list)
+            putString("contacts", json)
+            commit()
+        }
+    }
+
+    private fun getInstanceSharedPreferences(): SharedPreferences {
+        return getSharedPreferences("com.example.recyclerviewcardview.PREFERENCES", Context.MODE_PRIVATE)
+    }
+
+    private fun initDrawer() {
         val drawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -39,24 +69,24 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
     }
 
-    private fun bindViews(){
+    private fun bindViews() {
         rvList.adapter = adapter
         rvList.layoutManager = LinearLayoutManager(this)
+        updateList()
+    }
+
+    private fun getListContacts(): List<Contact> {
+        val list = getInstanceSharedPreferences().getString("contacts", "[]")
+        val turnsType = object : TypeToken<List<Contact>>() {}.type
+        return Gson().fromJson(list, turnsType)
+
     }
 
     private fun updateList(){
-        adapter.updateList(
-                arrayListOf(
-                        Contact(
-                                "Anderson Matos",
-                                "(51) 99778-0521",
-                                "img.png"
-                        )
-                )
-        )
+       adapter.updateList(getListContacts())
     }
 
-    private fun showToast(message: String){
+    private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
@@ -78,5 +108,11 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun clickItemContact(contact: Contact) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(EXTRA_CONTACT, contact)
+        startActivity(intent)
     }
 }

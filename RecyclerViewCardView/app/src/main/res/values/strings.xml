@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RecyclerViewCardView</string>
     <string name="iv_photograph_content_description">Foto do contato</string>
+    <string name="tv_contact_name">Nome do Contato</string>
+    <string name="tv_contact_phone">(xx) xxxxx-xxxx</string>
 
     <string name="menu_1">Menu 1</string>
     <string name="menu_2">Menu 2</string>
