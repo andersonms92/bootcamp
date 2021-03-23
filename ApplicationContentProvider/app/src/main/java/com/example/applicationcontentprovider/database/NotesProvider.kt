@@ -10,6 +10,7 @@ import android.media.UnsupportedSchemeException
 import android.net.Uri
 import android.os.Build
 import android.provider.BaseColumns._ID
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.applicationcontentprovider.database.NotesDatabaseHelper.Companion.TABLE_NOTES
 
@@ -74,13 +75,12 @@ class NotesProvider : ContentProvider() {
             mUriMatcher.match(uri) == NOTES_BY_ID -> {
                 val db: SQLiteDatabase = dbHelper.writableDatabase
                 val cursor = db.query(TABLE_NOTES, projection, "$_ID = ?", arrayOf(uri.lastPathSegment), null, null, sortOrder)
-                cursor.setNotificationUri((context as Context).contentResolver, uri )
+                cursor.setNotificationUri(context?.contentResolver, uri )
                 cursor
             }
             else -> {
                 throw UnsupportedSchemeException("Uri não implementada.")
             }
-
         }
     }
 
