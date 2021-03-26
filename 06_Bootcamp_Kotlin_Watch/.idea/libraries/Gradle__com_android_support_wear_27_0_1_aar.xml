@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.support:wear:27.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wear-27.0.1.aar/7eb54b853a7c489bc022ace76aa46bbf/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wear-27.0.1.aar/7eb54b853a7c489bc022ace76aa46bbf/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wear-27.0.1.aar/7eb54b853a7c489bc022ace76aa46bbf/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wear-27.0.1.aar/6301b2c25a38809dda070bf991543e3d/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wear-27.0.1.aar/6301b2c25a38809dda070bf991543e3d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wear-27.0.1.aar/6301b2c25a38809dda070bf991543e3d/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/wear/27.0.1/11cb101410159581eeed9e7e13ae7403c6c24233/wear-27.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

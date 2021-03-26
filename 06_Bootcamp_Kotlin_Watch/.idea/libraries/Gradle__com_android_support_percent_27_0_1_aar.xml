@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.support:percent:27.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-27.0.1.aar/cb8010f3cf9ed98be4de7ba945aaab41/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-27.0.1.aar/cb8010f3cf9ed98be4de7ba945aaab41/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-27.0.1.aar/cb8010f3cf9ed98be4de7ba945aaab41/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-27.0.1.aar/1c14e22466b9875e1f312e6591f7da59/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-27.0.1.aar/1c14e22466b9875e1f312e6591f7da59/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-27.0.1.aar/1c14e22466b9875e1f312e6591f7da59/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/percent/27.0.1/d94b3b6744b4e1ed8bbae6be7f16557bb2334831/percent-27.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
