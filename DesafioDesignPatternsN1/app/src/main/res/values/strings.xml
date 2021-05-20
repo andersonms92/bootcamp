@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DesafioDesignPatternsN1</string>
+    <string name="informe_cpf_ou_cnpj">Informe CPF ou CNPJ</string>
+    <string name="btn_verificar">Verificar</string>
+</resources>
