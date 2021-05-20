@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: 06_Bootcamp_Kotlin_Watch.shared.shared">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/shared/build/libs/shared.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
