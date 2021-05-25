@@ -1,0 +1,3 @@
+rootProject.name = "DesafioDesignPatternsN2"
+include ':app'
+include ':data'
