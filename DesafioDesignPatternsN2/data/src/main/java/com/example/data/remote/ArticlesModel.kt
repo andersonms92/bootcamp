@@ -1,6 +1,6 @@
 package com.example.data.remote
 
-data class Articles(
+data class ArticlesModel(
     val source: Sources,
     val author: String? = null,
     val title: String,

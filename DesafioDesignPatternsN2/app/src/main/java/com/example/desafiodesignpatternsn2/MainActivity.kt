@@ -1,70 +1,48 @@
 package com.example.desafiodesignpatternsn2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.data.remote.Articles
-import com.example.data.remote.NewsRetrofit
+import android.view.View
+import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var newsRecyclerView: RecyclerView
-    private lateinit var articlesAdapter: ArticlesAdapter
-    private lateinit var newsLayoutManager: LinearLayoutManager
-
-    private var technologyNewsPage = 1
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        newsRecyclerView = findViewById(R.id.rv_technology_news)
-        newsLayoutManager = LinearLayoutManager(
-            this,
-            LinearLayoutManager.VERTICAL,
-            false
-        )
-        newsRecyclerView.layoutManager = newsLayoutManager
-        articlesAdapter = ArticlesAdapter(mutableListOf())
-        newsRecyclerView.adapter = articlesAdapter
+     val button1: Button = findViewById(R.id.btn_esporte)
+     val button2: Button = findViewById(R.id.btn_ciencia)
+     val button3: Button = findViewById(R.id.btn_tecnologia)
+     val button4: Button = findViewById(R.id.btn_turismo)
 
-        getTecnologyNews()
+        button1.setOnClickListener(this)
+        button2.setOnClickListener(this)
+        button3.setOnClickListener(this)
+        button4.setOnClickListener(this)
 
     }
+    override fun onClick(view: View?) {
+        val intent = Intent(this, ArticlesActivity::class.java)
 
-    fun getTecnologyNews() {
-        NewsRetrofit.getTechnologyNews(
-            technologyNewsPage,
-            ::onNewsFetched,
-            ::onError
-        )
-    }
-
-    private fun attachNewsOnScrollListener() {
-        newsRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                val totalItemCount = newsLayoutManager.itemCount
-                val visibleItemCount = newsLayoutManager.childCount
-                val firstVisibleItem = newsLayoutManager.findFirstVisibleItemPosition()
-
-                if (firstVisibleItem + visibleItemCount >= totalItemCount / 2) {
-                    newsRecyclerView.removeOnScrollListener(this)
-                    technologyNewsPage++
-                    getTecnologyNews()
-                }
+        when(view?.id) {
+            R.id.btn_esporte -> {
+                intent.putExtra(ARTICLE_URL, "Esporte")
+                startActivity(intent)
             }
-        })
-    }
-
-
-    private fun onNewsFetched(news: List<Articles>) {
-        articlesAdapter.updateNews(news)
-        attachNewsOnScrollListener()
-    }
-
-    private fun onError() {
-        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+            R.id.btn_ciencia -> {
+                intent.putExtra(ARTICLE_URL, "Ciencia")
+                startActivity(intent)
+            }
+            R.id.btn_tecnologia -> {
+                intent.putExtra(ARTICLE_URL, "Tecnologia")
+                startActivity(intent)
+            }
+            R.id.btn_turismo -> {
+                intent.putExtra(ARTICLE_URL, "Turismo")
+                startActivity(intent)
+            }
+        }
     }
 }

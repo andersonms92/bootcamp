@@ -7,13 +7,28 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_technology_news"
+    <Button
+        android:id="@+id/btn_esporte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:clipToPadding="false"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
+        android:text="@string/btn_esportes" />
+
+    <Button
+        android:id="@+id/btn_ciencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_ciência" />
+
+    <Button
+        android:id="@+id/btn_tecnologia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_tecnologia" />
+
+    <Button
+        android:id="@+id/btn_turismo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_turismo" />
 
 </LinearLayout>

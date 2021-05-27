@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NewsRetrofit {
 
     private val api: NewsApi
+    var url: String = ""
 
     init {
         val retrofit = Retrofit.Builder()
@@ -19,16 +20,16 @@ object NewsRetrofit {
         api = retrofit.create(NewsApi::class.java)
     }
 
-    fun getTechnologyNews(
+    fun getNews(
         page: Int = 1,
-        onSuccess: (news: List<Articles>) -> Unit,
+        onSuccess: (news: List<ArticlesModel>) -> Unit,
         onError: () -> Unit
     ) {
-        api.getTecnologyNews(page = page)
-            .enqueue(object : Callback<News> {
+        api.getArticles(page = page, q = url)
+            .enqueue(object : Callback<NewsModel> {
                 override fun onResponse(
-                    call: Call<News>,
-                    response: Response<News>
+                    call: Call<NewsModel>,
+                    response: Response<NewsModel>
                 ) {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
@@ -43,7 +44,7 @@ object NewsRetrofit {
                     }
                 }
 
-                override fun onFailure(call: Call<News>, t: Throwable) {
+                override fun onFailure(call: Call<NewsModel>, t: Throwable) {
                     onError.invoke()
                 }
             })
